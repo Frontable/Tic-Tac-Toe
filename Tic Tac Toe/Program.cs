@@ -3,7 +3,7 @@ namespace Tic_Tac_Toe
 {
     class Program
     {
-        static int[] board = new int[9];
+        static string[] board = new string[9];
         static void Main(string[] args)
         {
             string name = "X";
@@ -27,18 +27,19 @@ namespace Tic_Tac_Toe
 
         static void drawBoard()
         {
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < 9; i+=3)
             {
-                Console.WriteLine("| " + board[i] + " | " + board[i + 1] + " | " + board[i + 2] + " |");
+                Console.WriteLine("|   " + board[i] + "   |   " + board[i + 1] + "   |   " + board[i + 2] + "   |");
             }
             
         }
 
         static void askPlayer(string player)
         {
-            Console.WriteLine("Enter Input: ");
+            Console.WriteLine("Player " + player + " input: ");
             int select = Convert.ToInt32(Console.ReadLine());
-            //for (int i = 0;i < board; i++) { }
+            board[select] = player;
+            drawBoard();
         }
 
         static Boolean winCon()
