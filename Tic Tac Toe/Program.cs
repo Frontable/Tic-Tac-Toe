@@ -53,19 +53,50 @@ namespace Tic_Tac_Toe
 
         static Boolean winCon()
         {
-
+            //horizontal
             if (String.Equals(board[0], board[1]) && String.Equals(board[1], board[2]))
             {
                 Console.WriteLine("GG");
                 return true;
-            }    
-         
-            if (String.Equals(board[3], board[4]) && String.Equals(board[4], board[5]))
+            }else if (String.Equals(board[3], board[4]) && String.Equals(board[4], board[5]))
+            {
+                Console.WriteLine("GG");
+                return true;
+            }
+            else if (String.Equals(board[6], board[7]) && String.Equals(board[7], board[8]))
             {
                 Console.WriteLine("GG");
                 return true;
             }
 
+            //vertical
+            if (String.Equals(board[0], board[3]) && String.Equals(board[3], board[6]))
+            {
+                Console.WriteLine("GG");
+                return true;
+            }
+            else if (String.Equals(board[1], board[4]) && String.Equals(board[4], board[7]))
+            {
+                Console.WriteLine("GG");
+                return true;
+            }
+            else if (String.Equals(board[2], board[5]) && String.Equals(board[5], board[8]))
+            {
+                Console.WriteLine("GG");
+                return true;
+            }
+
+            //diagonal
+            if (String.Equals(board[0], board[4]) && String.Equals(board[4], board[8]))
+            {
+                Console.WriteLine("GG");
+                return true;
+            }
+            else if (String.Equals(board[2], board[4]) && String.Equals(board[4], board[6]))
+            {
+                Console.WriteLine("GG");
+                return true;
+            }
             return false;
                 
         }
